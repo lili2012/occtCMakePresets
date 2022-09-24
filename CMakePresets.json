@@ -1,0 +1,32 @@
+{
+    "version": 2,
+    "configurePresets": [
+        {
+            "name": "linux",
+            "displayName": "GCC 11.2.0 x86_64-linux-gnu",
+            "description": "occt",
+            "binaryDir": "${sourceDir}/build/${presetName}",
+            "generator": "Ninja",
+            "cacheVariables": {
+                "CMAKE_INSTALL_PREFIX": "${sourceDir}",
+                "CMAKE_CXX_COMPILER": "g++-11",
+				"CMAKE_C_COMPILER": "gcc-11",
+                "CMAKE_BUILD_TYPE": "Debug"
+            }
+        }
+    ],
+    "buildPresets": [
+        {
+            "name": "x64-Debug",
+            "description": "",
+            "displayName": "",
+            "configurePreset": "x64-Debug",
+            "targets": [
+                "occt"
+            ],
+            "verbose": true,
+            "inheritConfigureEnvironment": true,
+            "configuration": "Debug"
+        }
+    ]
+}
